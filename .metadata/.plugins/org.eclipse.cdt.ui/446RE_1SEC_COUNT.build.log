@@ -1,0 +1,11 @@
+11:51:19 **** Incremental Build of configuration Debug for project 446RE_1SEC_COUNT ****
+make all 
+arm-none-eabi-gcc -o "446RE_1SEC_COUNT.elf" @"objects.list"  -larm_cortexM4lf_math -mcpu=cortex-m4 -T"../STM32F446RE_FLASH.ld" --specs=nosys.specs -Wl,-Map="446RE_1SEC_COUNT.map" -Wl,--gc-sections -static -L"C:/Users/sohaenglee/STM32Cube/Repository/STM32Cube_FW_F4_V1.21.0/Drivers/CMSIS/Lib/GCC"  -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+c:\st\stm32cubeide_1.3.0\stm32cubeide\plugins\com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.5.0.202011040924\tools\arm-none-eabi\bin\ld.exe: cannot find -larm_cortexM4lf_math
+collect2.exe: error: ld returned 1 exit status
+make[1]: *** [makefile:59: 446RE_1SEC_COUNT.elf] Error 1
+make: *** [makefile:52: all] Error 2
+"make all" terminated with exit code 2. Build might be incomplete.
+
+11:51:21 Build Failed. 3 errors, 0 warnings. (took 1s.313ms)
+

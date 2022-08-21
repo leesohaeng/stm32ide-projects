@@ -1,0 +1,10 @@
+14:00:36 **** Incremental Build of configuration Debug for project myTESTGFXproject ****
+make -j2 all 
+arm-none-eabi-size   myTESTGFXproject.elf 
+   text	   data	    bss	    dec	    hex	filename
+ 204024	    348	  50332	 254704	  3e2f0	myTESTGFXproject.elf
+Finished building: default.size.stdout
+ 
+
+14:00:38 Build Finished. 0 errors, 0 warnings. (took 1s.782ms)
+

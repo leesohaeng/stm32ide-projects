@@ -1,0 +1,31 @@
+11:04:41 **** Incremental Build of configuration Debug for project USART_Rx ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+../Core/Src/main.c: In function 'HAL_UART_RxCpltCallback':
+../Core/Src/main.c:71:29: warning: pointer targets in passing argument 2 of 'HAL_UART_Transmit' differ in signedness [-Wpointer-sign]
+   HAL_UART_Transmit(&huart2,"*",1,1000);
+                             ^~~
+In file included from ../Core/Inc/stm32f4xx_hal_conf.h:364:0,
+                 from ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:30,
+                 from ../Core/Inc/main.h:31,
+                 from ../Core/Src/main.c:22:
+../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:696:19: note: expected 'uint8_t * {aka unsigned char *}' but argument is of type 'char *'
+ HAL_StatusTypeDef HAL_UART_Transmit(UART_HandleTypeDef *huart, uint8_t *pData, uint16_t Size, uint32_t Timeout);
+                   ^~~~~~~~~~~~~~~~~
+arm-none-eabi-gcc -o "USART_Rx.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sohaenglee\Desktop\STM32IDE_Projects\USART_Rx\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="USART_Rx.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: USART_Rx.elf
+ 
+arm-none-eabi-objdump -h -S  USART_Rx.elf  > "USART_Rx.list"
+arm-none-eabi-objcopy  -O binary  USART_Rx.elf  "USART_Rx.bin"
+Finished building: USART_Rx.bin
+Finished building: USART_Rx.list
+ 
+ 
+arm-none-eabi-size   USART_Rx.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10800	     20	   1636	  12456	   30a8	USART_Rx.elf
+Finished building: default.size.stdout
+ 
+
+11:04:45 Build Finished. 0 errors, 1 warnings. (took 4s.438ms)
+

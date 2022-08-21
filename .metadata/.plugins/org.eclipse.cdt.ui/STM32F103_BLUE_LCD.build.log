@@ -1,0 +1,12 @@
+23:40:11 **** Incremental Build of configuration Debug for project STM32F103_BLUE_LCD ****
+make all 
+arm-none-eabi-size   STM32F103_BLUE_LCD.elf 
+   text	   data	    bss	    dec	    hex	filename
+  37792	   2628	   2308	  42728	   a6e8	STM32F103_BLUE_LCD.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy.exe -O ihex "STM32F103_BLUE_LCD.elf" "STM32F103_BLUE_LCD.hex"
+ 
+
+23:40:13 Build Finished. 0 errors, 0 warnings. (took 1s.766ms)
+

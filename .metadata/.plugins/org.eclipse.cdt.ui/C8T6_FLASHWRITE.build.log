@@ -1,0 +1,63 @@
+12:10:46 **** Incremental Build of configuration Debug for project C8T6_FLASHWRITE ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/flash_eeprom.c" -mcpu=cortex-m3 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F103xB -DDEBUG -c -I../Core/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc -I../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/flash_eeprom.d" -MT"Core/Src/flash_eeprom.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/flash_eeprom.o"
+../Core/Src/flash_eeprom.c: In function 'flash_memory_erase':
+../Core/Src/flash_eeprom.c:30:3: warning: implicit declaration of function 'printf' [-Wimplicit-function-declaration]
+   printf("Eraser Error\r\n");
+   ^~~~~~
+../Core/Src/flash_eeprom.c:30:3: warning: incompatible implicit declaration of built-in function 'printf'
+../Core/Src/flash_eeprom.c:30:3: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/flash_eeprom.c: In function 'flash_memory_read':
+../Core/Src/flash_eeprom.c:65:2: warning: incompatible implicit declaration of built-in function 'printf'
+  printf("Addr = %X, Data = %d\r\n", USER_DATA1, *(__IO uint32_t *)USER_DATA1);
+  ^~~~~~
+../Core/Src/flash_eeprom.c:65:2: note: include '<stdio.h>' or provide a declaration of 'printf'
+../Core/Src/flash_eeprom.c:65:18: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("Addr = %X, Data = %d\r\n", USER_DATA1, *(__IO uint32_t *)USER_DATA1);
+                 ~^
+                 %lX
+../Core/Src/flash_eeprom.c:65:29: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka volatile long unsigned int}' [-Wformat=]
+  printf("Addr = %X, Data = %d\r\n", USER_DATA1, *(__IO uint32_t *)USER_DATA1);
+                            ~^
+                            %ld
+../Core/Src/flash_eeprom.c:66:18: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("Addr = %X, Data = %d\r\n", USER_DATA2, *(__IO uint32_t *)USER_DATA2);
+                 ~^
+                 %lX
+../Core/Src/flash_eeprom.c:66:29: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka volatile long unsigned int}' [-Wformat=]
+  printf("Addr = %X, Data = %d\r\n", USER_DATA2, *(__IO uint32_t *)USER_DATA2);
+                            ~^
+                            %ld
+../Core/Src/flash_eeprom.c:67:18: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("Addr = %X, Data = %d\r\n", USER_DATA3, *(__IO uint32_t *)USER_DATA3);
+                 ~^
+                 %lX
+../Core/Src/flash_eeprom.c:67:29: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka volatile long unsigned int}' [-Wformat=]
+  printf("Addr = %X, Data = %d\r\n", USER_DATA3, *(__IO uint32_t *)USER_DATA3);
+                            ~^
+                            %ld
+../Core/Src/flash_eeprom.c:68:18: warning: format '%X' expects argument of type 'unsigned int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  printf("Addr = %X, Data = %d\r\n", USER_DATA4, *(__IO uint32_t *)USER_DATA4);
+                 ~^
+                 %lX
+../Core/Src/flash_eeprom.c:68:29: warning: format '%d' expects argument of type 'int', but argument 3 has type 'uint32_t {aka volatile long unsigned int}' [-Wformat=]
+  printf("Addr = %X, Data = %d\r\n", USER_DATA4, *(__IO uint32_t *)USER_DATA4);
+                            ~^
+                            %ld
+arm-none-eabi-gcc -o "C8T6_FLASHWRITE.elf" @"objects.list"   -mcpu=cortex-m3 -T"C:\Users\sohaenglee\Desktop\STM32IDE_Projects\C8T6_FLASHWRITE\STM32F103C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="C8T6_FLASHWRITE.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -u _printf_float -u _scanf_float -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: C8T6_FLASHWRITE.elf
+ 
+arm-none-eabi-objdump -h -S  C8T6_FLASHWRITE.elf  > "C8T6_FLASHWRITE.list"
+arm-none-eabi-objcopy  -O binary  C8T6_FLASHWRITE.elf  "C8T6_FLASHWRITE.bin"
+Finished building: C8T6_FLASHWRITE.bin
+Finished building: C8T6_FLASHWRITE.list
+ 
+arm-none-eabi-size   C8T6_FLASHWRITE.elf 
+ 
+   text	   data	    bss	    dec	    hex	filename
+  26420	    484	   1640	  28544	   6f80	C8T6_FLASHWRITE.elf
+Finished building: default.size.stdout
+ 
+
+12:10:48 Build Finished. 0 errors, 11 warnings. (took 2s.47ms)
+

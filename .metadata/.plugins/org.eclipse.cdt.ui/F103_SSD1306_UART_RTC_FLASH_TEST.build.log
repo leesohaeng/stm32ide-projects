@@ -1,0 +1,12 @@
+19:19:45 **** Incremental Build of configuration Debug for project F103_SSD1306_UART_RTC_FLASH_TEST ****
+make all 
+arm-none-eabi-size   F103_SSD1306_UART_RTC_FLASH_TEST.elf 
+   text	   data	    bss	    dec	    hex	filename
+  34836	    852	   8240	  43928	   ab98	F103_SSD1306_UART_RTC_FLASH_TEST.elf
+Finished building: default.size.stdout
+ 
+arm-none-eabi-objcopy.exe -O ihex "F103_SSD1306_UART_RTC_FLASH_TEST.elf" "F103_SSD1306_UART_RTC_FLASH_TEST.hex"
+ 
+
+19:19:47 Build Finished. 0 errors, 0 warnings. (took 2s.298ms)
+

@@ -1,0 +1,20 @@
+11:41:47 **** Incremental Build of configuration Debug for project HelloC ****
+make -j2 all 
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DSTM32F446xx -DDEBUG -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc -o "HelloC.elf" @"objects.list"   -mcpu=cortex-m4 -T"C:\Users\sohaenglee\Desktop\STM32IDE_Projects\HelloC\STM32F446RETX_FLASH.ld" --specs=nosys.specs -Wl,-Map="HelloC.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: HelloC.elf
+ 
+arm-none-eabi-objdump -h -S  HelloC.elf  > "HelloC.list"
+arm-none-eabi-objcopy  -O binary  HelloC.elf  "HelloC.bin"
+Finished building: HelloC.bin
+Finished building: HelloC.list
+ 
+ 
+arm-none-eabi-size   HelloC.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8868	     20	   1636	  10524	   291c	HelloC.elf
+Finished building: default.size.stdout
+ 
+
+11:41:51 Build Finished. 0 errors, 0 warnings. (took 4s.125ms)
+
